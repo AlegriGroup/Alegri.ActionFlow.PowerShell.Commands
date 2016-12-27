@@ -12,6 +12,18 @@ Das Tool stehl eine Globale Funktion Create-QuestionTask zur Verfügung, die es 
 
 Ein Beispiel für eine Aktionspaket finden Sie in einem [seperaten Projekt](https://github.com/Campergue/Alegri.ActionPack.Template.Powershell.Commands).
 
+## Anwendungszweck
+Bei größeren Projekten gibt es für die Umsetzung der DevOps Prinzipien genügend Tools die der Aufgabe gerecht werden. In kleinere Projekten wie z.B. das Implementieren von kleineren SharePoint Service Seiten stehen diese Tools nicht zur Verfügung bzw. machen in der Regel kein Sinn. Aus dieser Situation ist die Idee gekommen, dennoch eine gute Übergabe zur Operation zu ermöglichen. 
+
+Um auf das Beispiel der SharePoint Service Seite zurückzukommen, könnte ein Szenario wie folgt aussehen. 
+
+Der Entwickler provisioniert über das CSOM Modell die neue SharePoint Service Seiten mit allen seinen Artifakte. Das gerade bei SharePoint Artefakten eine Reihenfolge wichtig sein kann, definiert der Entwickler eine Aktionsablauf und stellt diesem dem Administator (Operation) zur Verfügung. Er muss somit nur diese XML Datei nur mit dem Action Flow Tool ausführen um die Anwendung auszuführen. Idealerweise stellt der Entwickler auch eine Deinstallationsroutine bereit. Sollte es bei der Provisionierung Probleme geben. 
+
+Genau für dieses Szenario ist ein Aktionspaket für SharePoint Provisionierung entstanden das Sie in folgenden Projekt [Link folgt] finden.
+
+## Ausführen des Action Flow Tools
+
+
 ## Einfachste Form der Verwendung
 1. Laden Sie das Projekt auf Ihren Lokalen Rechner
 2. Erstellen / Fügen Sie das Modul dem Lokalen Profile der PowerShell Umgebung zu
@@ -41,6 +53,16 @@ In the case of a manual action, the description is displayed as a note on the co
 The tool provides a global function Create-QuestionTask, which allows the developer of an action to also incorporate a manual interaction of the user.
 
 An example of an action package can be found in a [seperate project](https://github.com/Campergue/Alegri.ActionPack.Template.Powershell.Commands).
+
+## Application purpose
+
+For larger projects there are enough tools for the implementation of the DevOps principles to meet the task. In smaller projects, e.g. The implementation of smaller SharePoint service pages is not available or usually makes no sense. From this situation the idea has come, nevertheless, to allow a good surrender to the operation.
+
+To return to the example of the SharePoint service page, a scenario might look like this.
+
+The developer provides the new SharePoint service pages with all his artifacts via the CSOM model. If a sequence is important for SharePoint artefacts, the developer defines an action flow and makes it available to the administrator (operation). Therefore, you only have to run this XML file with the ActionFlowTool to run the application. The developer also provides an uninstallation routine. Should there be problems with the provisioning.
+
+Exactly for this scenario, a SharePoint Provisioning Action Pack has been created that you can find in the following project [link].
 
 ## The simplest form of use
 1. Download the project to your local computer
