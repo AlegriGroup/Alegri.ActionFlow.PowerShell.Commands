@@ -21,8 +21,11 @@ Der Entwickler provisioniert über das CSOM Modell die neue SharePoint Service S
 
 Genau für dieses Szenario ist ein Aktionspaket für SharePoint Provisionierung entstanden das Sie in folgenden Projekt [Link folgt] finden.
 
-## Ausführen des Action Flow Tools
+Ein weitere Vorteil durch die XML Definition der Aktionen, somit können auch Consulter die keine PowerShell Kenntnisse haben, die Implementierung für die Administratoren definieren.
 
+## Ausführen des Action Flow Tools
+Sie müssen einfach die AktionXml an die Start-ActionFlow Methode übergeben und damit starten Sie das ausführen der Aktionen.
+![image](https://cloud.githubusercontent.com/assets/6292190/21510293/fcdb1292-cc91-11e6-8661-d862e0727727.png)
 
 ## Einfachste Form der Verwendung
 1. Laden Sie das Projekt auf Ihren Lokalen Rechner
@@ -34,7 +37,7 @@ Genau für dieses Szenario ist ein Aktionspaket für SharePoint Provisionierung 
     2. Die ProfilDatei für die PowerShell ISE. Sollte die Datei bei Ihnen nicht vorhanden sein, können Sie diese Datei selbst erstellen.
   3. Importieren Sie die .psm1 Datei des Moduls in die jeweilige Profil Datei. Ersetzen Sie den Pfad mit dem Pfad auf Ihren Rechner zu dem Projekt.
 ![image](https://cloud.githubusercontent.com/assets/6292190/21509915/46157d98-cc8e-11e6-9226-9babc9232767.png)
-  
+
 ## Einbinden eines Aktionspaket
 ![image](https://cloud.githubusercontent.com/assets/6292190/21509729/24ecc7cc-cc8c-11e6-9194-3b1c02bb8c0d.png)
   1. Sie prüfen als erstes ob die Aktion in dem Aktionspaket enthalten ist. Wenn ja rufen Sie die Start Funktion auf um die Aktion auszuführen.
@@ -64,19 +67,27 @@ The developer provides the new SharePoint service pages with all his artifacts v
 
 Exactly for this scenario, a SharePoint Provisioning Action Pack has been created that you can find in the following project [link].
 
+A further advantage of the XML definition of the actions, so also consulters who have no PowerShell knowledge can define the implementation for the administrators.
+
+## Execute the ActionFlowTool
+
+You just need to pass the ActionXml to the Startup ActionFlow method, and then start the actions.
+![Image](https://cloud.githubusercontent.com/assets/6292190/21510293/fcdb1292-cc91-11e6-8661-d862e0727727.png)
+
 ## The simplest form of use
 1. Download the project to your local computer
 2. Create / Add the module to the Local Profile of the PowerShell environment
   1. Typically, you will find a WindowsPowerShell folder under C: \ User \ [yourUserName] \ Documents. If not, create the folder
   2. Inside the folder are two files for the UserProfile settings for the PowerShell
-  ! [Image] (https://cloud.githubusercontent.com/assets/6292190/21509854/afcb1abe-cc8d-11e6-8e49-858602bf1a14.png)
+  ![Image](https://cloud.githubusercontent.com/assets/6292190/21509854/afcb1abe-cc8d-11e6-8e49-858602bf1a14.png)
     1. The profile file for the PowerShell Classic. If the file does not exist, you can create it yourself
     2. The profile file for the PowerShell ISE. If the file does not exist, you can create it yourself.
   3. Import the .psm1 file of the module into the respective profile file. Replace the path with the path to your computer to the project.
-! [Image] (https://cloud.githubusercontent.com/assets/6292190/21509915/46157d98-cc8e-11e6-9226-9babc9232767.png)
+![Image](https://cloud.githubusercontent.com/assets/6292190/21509915/46157d98-cc8e-11e6-9226-9babc9232767.png)
   
 ## Integrating an action package
-! [Image] (https://cloud.githubusercontent.com/assets/6292190/21509729/24ecc7cc-cc8c-11e6-9194-3b1c02bb8c0d.png)
+![Image](https://cloud.githubusercontent.com/assets/6292190/21509729/24ecc7cc-cc8c-11e6-9194-3b1c02bb8c0d.png)
   1. You first check whether the action is contained in the action package. If so, call the startup function to perform the action.
 
 You must include the package as the ActionFlowTool module.
+
