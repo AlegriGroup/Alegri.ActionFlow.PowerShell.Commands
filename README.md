@@ -1,35 +1,35 @@
-# Alegri.Powershell.ActionFlowTool
+# Alegri.ActionFlow.PowerShell.Commands
 
 ## Kurz Beschreibung
 
-Ein Aktion Flow Tool für Powershell das es ermöglicht mit einer XML Datei verschiedene Aktionen auszuführen. Diese Tool stellt jedoch rein die generalisierte Funktion des Aktion Flow dar. Die eigentlichen Funktionen werden durch sogenannte Aktionspakete zur Verfügung gestellt. Diese Pakete müssen im Aktionspaket Manager eingetragen werden.
+Das "Action Flow Tool" für Powershell ermöglicht es mit einer XML Datei verschiedene Aktionen auszuführen. Dieses Tool stellt jedoch rein die generalisierte Funktion des "Action Flow Tool" dar. Die eigentlichen Funktionen werden durch sogenannte "Action Packs" zur Verfügung gestellt. Diese Pakete müssen im "Action Pack Manager" des "Action Flow Tool" eingetragen werden.
 
-Dieses Tool kennt zwei Aktionstypen [manuell, automatisch].
+Das "Action Flow Tool" kennt zwei Aktionstypen [manuell, automatisch].
 
-Bei einer manuelle Aktion wird die Beschreibung als Hinweis auf der Konsole ausgegeben und es wird auf eine Bestätigung des Users erwartet. Entsprechend der Eingabe des User wird das Skript beendet bzw. weitergeführt.
+Bei einer manuellen Aktion wird die Beschreibung als Hinweis auf der Konsole ausgegeben und es wird auf eine Interaktion des Users gewartet. Entsprechend der Eingabe des User wird dann das Skript beendet bzw. weitergeführt.
 
-Das Tool stehl eine Globale Funktion Create-QuestionTask zur Verfügung, die es dem Entwickler einer Aktion ermöglicht, ebenfalls eine manuelle Interaktion des Users einzubauen.
+Das "Action Flow Tool" stellt eine Globale Funktion [Create-QuestionTask] bereit, die es dem Entwickler einer Aktion ermöglicht, ebenfalls eine manuelle Interaktion des Users einzubauen.
 
-Ein Beispiel für eine Aktionspaket finden Sie in einem [seperaten Projekt](https://github.com/Campergue/Alegri.ActionPack.Template.Powershell.Commands).
+Ein Beispiel für ein "Action Pack" finden Sie in einem [seperaten Projekt](https://github.com/Campergue/Alegri.ActionPack.Template.Powershell.Commands).
 
 ## Anwendungszweck
-Bei größeren Projekten gibt es für die Umsetzung der DevOps Prinzipien genügend Tools die der Aufgabe gerecht werden. In kleinere Projekten wie z.B. das Implementieren von kleineren SharePoint Service Seiten stehen diese Tools nicht zur Verfügung bzw. machen in der Regel kein Sinn. Aus dieser Situation ist die Idee gekommen, dennoch eine gute Übergabe zur Operation zu ermöglichen. 
+Bei größeren Projekten gibt es für die Umsetzung der DevOps Prinzipien genügend Tools die der Aufgabe gerecht werden. In kleinere Projekten wie z.B. das implementieren von kleineren SharePoint Service Seiten stehen diese Tools nicht zur Verfügung bzw. machen in der Regel kein Sinn. Aus dieser Situation heraus ist die Idee für das "Action Flow Tool"gekommen. Durch die Übergabe der XML Datei wäre wieder eine gute Übergabe an den Adiministrator[Operation] gegeben.
 
 Um auf das Beispiel der SharePoint Service Seite zurückzukommen, könnte ein Szenario wie folgt aussehen. 
 
-Der Entwickler provisioniert über das CSOM Modell die neue SharePoint Service Seiten mit allen seinen Artifakte. Das gerade bei SharePoint Artefakten eine Reihenfolge wichtig sein kann, definiert der Entwickler eine Aktionsablauf und stellt diesem dem Administator (Operation) zur Verfügung. Er muss somit nur diese XML Datei nur mit dem Action Flow Tool ausführen um die Anwendung auszuführen. Idealerweise stellt der Entwickler auch eine Deinstallationsroutine bereit. Sollte es bei der Provisionierung Probleme geben. 
+Der Entwickler provisioniert über das CSOM Modell die neue SharePoint Service Seiten mit allen seinen Artefakten. Das gerade bei SharePoint Artefakten eine Reihenfolge wichtig sein kann, definiert der Entwickler eine "Action Flow" und stellt diesem dem Administator [Operation] zur Verfügung. Der Administration kann nun die XML Datei mit dem "Action Flow Tool" ausführen um die Anwendung zu installieren. Idealerweise stellt der Entwickler auch eine Deinstallationsroutine bereit, sollte es bei der Provisionierung Probleme geben. 
 
-Genau für dieses Szenario ist ein Aktionspaket für SharePoint Provisionierung entstanden das Sie in folgenden Projekt [Link folgt] finden.
+Genau für dieses Szenario ist ein "Action Pack" für die SharePoint Provisionierung entstanden das Sie in folgenden Projekt [Link folgt] finden.
 
-Ein weitere Vorteil durch die XML Definition der Aktionen, somit können auch Consulter die keine PowerShell Kenntnisse haben, die Implementierung für die Administratoren definieren.
+Ein weitere Vorteil der XML Definition der Aktionen ist, das ein Consulter keine PowerShell Kenntnisse mehr haben muss, um die Installation/Deinstallation einer Anwendung zu definieren.
 
 ## Ausführen des Action Flow Tools
-Sie müssen einfach die AktionXml an die Start-ActionFlow Methode übergeben und damit starten Sie das ausführen der Aktionen.
+Sie müssen die XML Datei als Pfad an die [Start-ActionFlow] Funktion übergeben und starten damit das ausführen der Aktionen.
 ![image](https://cloud.githubusercontent.com/assets/6292190/21510293/fcdb1292-cc91-11e6-8661-d862e0727727.png)
 
 ## Einfachste Form der Verwendung
 1. Laden Sie das Projekt auf Ihren Lokalen Rechner
-2. Erstellen / Fügen Sie das Modul dem Lokalen Profile der PowerShell Umgebung zu
+2. Fügen Sie das Modul dem lokalen Profil der PowerShell Umgebung hinzu.
   1. In der Regel finden Sie unter C:\User\[IhrUserName]\Documents einen WindowsPowerShell Ordner. Wenn nicht erstellen Sie den Ordner
   2. Innerhalb des Ordner befinden sich zwei Dateien für die UserProfile Einstellungen für die PowerShell
   ![image](https://cloud.githubusercontent.com/assets/6292190/21509854/afcb1abe-cc8d-11e6-8e49-858602bf1a14.png)
@@ -42,7 +42,7 @@ Sie müssen einfach die AktionXml an die Start-ActionFlow Methode übergeben und
 ![image](https://cloud.githubusercontent.com/assets/6292190/21509729/24ecc7cc-cc8c-11e6-9194-3b1c02bb8c0d.png)
   1. Sie prüfen als erstes ob die Aktion in dem Aktionspaket enthalten ist. Wenn ja rufen Sie die Start Funktion auf um die Aktion auszuführen.
 
-Sie müssen das Paket wie das ActionFlowTool Modul einbinden.
+Sie müssen das Paket wie das "Action Flow Tool" Modul einbinden.
 
 ---
 ##Short Description
