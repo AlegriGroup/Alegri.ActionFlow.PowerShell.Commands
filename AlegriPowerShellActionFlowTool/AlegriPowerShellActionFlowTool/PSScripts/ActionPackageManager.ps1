@@ -51,11 +51,23 @@ function Search-ActionFromActionPackage
 		
 		$returnValue = $true
 
-		if((Find-ActionInActionPackageTemplate($XmlAutomationAction.ActionObject.FirstChild.LocalName)) -eq $true)
+		if((Find-ActionInAP_SPEnvironment($XmlAutomationAction.ActionObject.FirstChild.LocalName)) -eq $true)
 		{
-			Start-ActionFromActionPackageTemplate($XmlAutomationAction)
+			Start-ActionFromAP_SPEnvironment($XmlAutomationAction)
+			    
+            Write-Verbose "Action has Find in ActionPackage SharePoint Environment"
+		}
+		elseif((Find-ActionInAP_Template($XmlAutomationAction.ActionObject.FirstChild.LocalName)) -eq $true)
+		{
+			Start-ActionFromAP_Template($XmlAutomationAction)
 			    
             Write-Verbose "Action has Find in ActionPackage Template"
+		}
+		elseif((Find-ActionInAP_SPProvisioning($XmlAutomationAction.ActionObject.FirstChild.LocalName)) -eq $true)
+		{
+			Start-ActionFromAP_SPProvisioning($XmlAutomationAction)
+			    
+            Write-Verbose "Action has Find in ActionPackage SharePoint Provisioning"
 		}
 		else 
 		{
