@@ -57,12 +57,6 @@ function Search-ActionFromActionPackage
 			    
             Write-Verbose "Action has Find in ActionPackage SharePoint Environment"
 		}
-		elseif((Find-ActionInAP_Template($XmlAutomationAction.ActionObject.FirstChild.LocalName)) -eq $true)
-		{
-			Start-ActionFromAP_Template($XmlAutomationAction)
-			    
-            Write-Verbose "Action has Find in ActionPackage Template"
-		}
 		elseif((Find-ActionInAP_SPProvisioning($XmlAutomationAction.ActionObject.FirstChild.LocalName)) -eq $true)
 		{
 			Start-ActionFromAP_SPProvisioning($XmlAutomationAction)
